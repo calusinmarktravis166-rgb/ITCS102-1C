@@ -1,51 +1,30 @@
-print("Welcome to Manga Reader Recommender!")
-print("Answer a few questions to find your next read.")
+print("Welcome to Manga Adventure Recommender! ")
+print("Let’s go on a journey to find your next manga...\n")
 
-genre = input("What genre do you like? (action, romance, horror): ").lower()
-duration = input("How long should the manga be? (long, medium, short): ").lower()
-time = input("From which decade? (2000s, 2010s): ").lower()
+print("First, choose your path:")
+print("1.  Action")
+print("2.  Romance")
+print("3.  Horror")
+choice1 = input("Enter 1, 2, or 3: ")
 
-if genre == "action":
-    if duration == "long" and time == "2000s":
-        print("The available mangas are: Naruto, Bleach")
-    elif duration == "long" and time == "2010s":
-        print("The available mangas are: Attack on Titan, My Hero Academia")
-    elif duration == "medium" and time == "2000s":
-        print("The available mangas are: Fullmetal Alchemist")
-    elif duration == "medium" and time == "2010s":
-        print("The available mangas are: Tokyo Ghoul")
-    elif duration == "short" and time == "2000s":
-        print("The available mangas are: Trigun")
-    elif duration == "short" and time == "2010s":
-        print("The available mangas are: One Punch Man")
+print("\nNow, how long should the journey be?")
+print("1. Long (100+ chapters)")
+print("2. Medium (50-100 chapters)")
+print("3. Short (under 50 chapters)")
+choice2 = input("Enter 1, 2, or 3: ")
 
-elif genre == "romance":
-    if duration == "long" and time == "2000s":
-        print("The available mangas are: Fruits Basket")
-    elif duration == "long" and time == "2010s":
-        print("The available mangas are: Ao Haru Ride")
-    elif duration == "medium" and time == "2000s":
-        print("The available mangas are: Lovely★Complex")
-    elif duration == "medium" and time == "2010s":
-        print("The available mangas are: Horimiya")
-    elif duration == "short" and time == "2000s":
-        print("The available mangas are: Kare Kano")
-    elif duration == "short" and time == "2010s":
-        print("The available mangas are: Daytime Shooting Star")
+print("\nFinally, which era will you explore?")
+print("1. 2000s")
+print("2. 2010s")
+choice3 = input("Enter 1 or 2: ")
 
-elif genre == "horror":
-    if duration == "long" and time == "2000s":
-        print("The available mangas are: Monster")
-    elif duration == "long" and time == "2010s":
-        print("The available mangas are: Ajin")
-    elif duration == "medium" and time == "2000s":
-        print("The available mangas are: Gantz")
-    elif duration == "medium" and time == "2010s":
-        print("The available mangas are: Parasyte")
-    elif duration == "short" and time == "2000s":
-        print("The available mangas are: Uzumaki")
-    elif duration == "short" and time == "2010s":
-        print("The available mangas are: I Am a Hero")
+genre_map = {"1": "Action", "2": "Romance", "3": "Horror"}
+duration_map = {"1": "Long", "2": "Medium", "3": "Short"}
+decade_map = {"1": "2000s", "2": "2010s"}
 
-else:
-    print("Sorry, no mangas found for your choices.")
+genre = genre_map.get(choice1)
+duration = duration_map.get(choice2)
+decade = decade_map.get(choice3)
+
+mangas = {
+    ("Action", "Long", "2000s"):
