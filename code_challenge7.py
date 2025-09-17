@@ -1,14 +1,13 @@
 
-import random
+odd_sum = 0
 
-numbers = [random.randint(2, 120) for _ in range(12)]
+print("ODD NUMBER ACCUMULATOR")
+print("Enter 10 numbers. We'll sum only the odd ones!")
 
-print("Generated numbers:", numbers)
+for i in range(1, 11):
+    number = int(input(f"Enter number {i}: ")) 
+    
+    if number % 2 != 0:
+        odd_sum += number 
 
-total = 0
-for num in numbers:
-
-    if num % 2 == 0:
-        total += num
-
-print("Sum of even numbers:", total)
+print(f"\nSum of all odd numbers: {odd_sum}")
