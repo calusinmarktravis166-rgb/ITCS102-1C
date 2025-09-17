@@ -1,4 +1,4 @@
-print("Welcome to Manga Adventure Recommender! ")
+print("Welcome to Manga Adventure Recommender!")
 print("Let’s go on a journey to find your next manga...\n")
 
 print("First, choose your path:")
@@ -26,5 +26,21 @@ genre = genre_map.get(choice1)
 duration = duration_map.get(choice2)
 decade = decade_map.get(choice3)
 
-mangas = {
-    ("Action", "Long", "2000s"):
+if not genre or not duration or not decade:
+    print("\n❌ Invalid choice entered. Please restart and try again!")
+else:
+    mangas = {
+        ("Action", "Long", "2000s"): ["Naruto", "Bleach"],
+        ("Action", "Long", "2010s"): ["Attack on Titan", "My Hero Academia"],
+        ("Romance", "Short", "2010s"): ["Horimiya"],
+        ("Horror", "Medium", "2010s"): ["Tokyo Ghoul"],
+    }
+
+    recommendation = mangas.get((genre, duration, decade))
+
+    print("\n=== Your Manga Recommendations ===")
+    if recommendation:
+        for manga in recommendation:
+            print("- " + manga)
+    else:
+        print("Sorry, no manga found for your choices. Try again!")
