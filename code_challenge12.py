@@ -1,11 +1,24 @@
 
 
-n = 6   
-for i in range(1, n+1):
-    print("  " * (n - i), end="")  
-    for j in range(i, 1, -1):
+n = 9 
+for a in range(1, n+1):
+    print("  " * (n - a), end="")  
+    
+    for j in range(a, 1, -1):
         print(j, end=" ")
     print("1", end=" ")
-    for j in range(2, i+1):
+    
+    for k in range(2, a+1):
+        print(k, end=" ")
+    print() 
+for a in range(n-1,0,-1):
+    print("  " * (n - a), end="")  
+    
+    for j in range(a, 1, -1):
         print(j, end=" ")
+    print("1", end=" ")
+    
+    for k in range(2, a+1):
+        print(k, end=" ")
     print()
+    
